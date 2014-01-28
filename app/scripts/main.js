@@ -62,8 +62,40 @@ var flour = new RecipePerfect('bread flour', 3, 1)
 var milkPowder = new RecipePerfect('dry milk powder', 2, 1)
 var yeast = new RecipePerfect('active dry yeast', .25, 1)
 
+//CONSTRUCTOR THREE//
+console.log('CONSTRUCTOR THREE')
+console.log('I created a constructor called WineCatalog. Its purpose is to keep track of my personal wine inventory.')
+console.log('The object names are "aOne" "aTwo" "aThree" "aFour" "aFive", corresponding to their place on the grid in my cellar')
+console.log('The properties of each are "location" (ie, in my cellar) "vintage" "brand" "variety" "drinkBy" "dateOpened" and "tastingNotes"')
+console.log('There is a function called bottleOpened to be invoked when I drink each wine.')
+console.log('It returns the dateOpened and the tastingNotes that I assign to each bottle.')
+console.log('I have already entered a dateOpened and tastingNotes for aOne and aTwo as examples')
 
+function WineCatalog (location, vintage, brand, variety, drinkBy, dateOpened, tastingNotes) {
+	this.location = location;
+	this.vintage = vintage;
+	this.brand = brand;
+	this.variety = variety;
+	this.drinkBy = drinkBy;
+	this.dateOpened = dateOpened;
+	this.tastingNotes = tastingNotes;
 
+	this.bottleOpened = function(){
+		return "This wine was opened on " + this.dateOpened + " and had tasting notes of" + this.tastingNotes;
+	}
+}
+
+var aOne = new WineCatalog ('A1', '2001', 'Yalumba', 'Old Vine Shiraz', '2018')
+var aTwo = new WineCatalog ('A2', '1998', 'Fisher Vineyards', 'Cabernet Sauvignon', '2015')
+var aThree = new WineCatalog ('A3', '2004', 'Ogier', 'Chateauneuf Du Pape', '2018')
+var aFour = new WineCatalog ('A4', '2009', 'Chateau Pontet Canet', 'Bordeaux', '2021')
+var aFive = new WineCatalog	('A5', '2007', 'Pepper Bridge', 'Merlot', '2016')
+
+aOne.dateOpened = 'January 2014'
+aOne.tastingNotes = 'Intense dark fruit and plum, accented by tobacco, cedar and heavy pepper notes. Gripping  tannins with a long finish.'
+
+aTwo.dateOpened = 'October 2013'
+aTwo.tastingNotes = 'Subtle blackcurrant, with hints of eucalyptus and a touch of olive. Black cherry on the mid-palate. Soft tannins, smooth finish.'
 
 
 
